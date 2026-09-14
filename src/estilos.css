@@ -198,9 +198,16 @@ h1 {
    seleção de modo
 ========================================================= */
 .modos { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.modo-card { cursor: pointer; min-width: 160px; transition: transform .12s ease; }
+.modo-card {
+  cursor: pointer; min-width: 160px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
 .modo-card:hover { transform: translateY(-3px) rotate(-.5deg); }
-.modo-card.ativo { box-shadow: 6px 6px 0 rgba(0,0,0,.4) !important; }
+.modo-card.ativo {
+  transform: translateY(-8px) scale(1.05) !important;
+  border-color: var(--cor-modo) !important;
+  box-shadow: 0 10px 0 var(--cor-modo), 0 16px 22px rgba(0,0,0,.45) !important;
+}
 .modo-card .p-card-body { padding: 14px !important; }
 .modo-card .p-card-content {
   display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; padding: 0 !important;

@@ -41,7 +41,7 @@ export default function SelecaoModo({ onEscolher }) {
             <Card
               key={m.id}
               className={`modo-card${ativo ? ' ativo' : ''}`}
-              style={{ borderColor: ativo ? m.cor : undefined }}
+              style={{ '--cor-modo': m.cor }}
               onClick={() => setModo(m.id)}
             >
               <strong style={{ color: m.cor }}>{m.nome}</strong>
