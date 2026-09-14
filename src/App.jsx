@@ -6,7 +6,7 @@
  * Layout: a página de desenho de verdade substitui o bloco <section className="jogo">.
  * As duas coisas podem usar exatamente os mesmos componentes e o hook usarJogo.
  */
-
+import TelaInicial from './componentes/TelaInicial/TelaInicial.jsx'
 import { useState } from 'react'
 import { usarJogo } from './ganchos/usarJogo.js'
 import { LISTA_MODOS } from './sistemas/dificuldade.js'
@@ -21,48 +21,57 @@ import Ranking from './componentes/Ranking.jsx'
 export default function App() {
   const [config, setConfig] = useState(null) // null = tela de escolha
 
-  if (!config) return <Inicio aoComecar={setConfig} />
+  function iniciarJogo() {
+    setConfig({
+      modo: LISTA_MODOS[0].id,
+      categoria: null,
+    })
+  }
+
+  if (!config) return <TelaInicial onStart={iniciarJogo} />
+
   return <Jogo config={config} aoSair={() => setConfig(null)} />
 }
 
-function Inicio({ aoComecar }) {
-  const [categoria, setCategoria] = useState('')
+// function Inicio({ aoComecar }) {
+//   const [categoria, setCategoria] = useState('')
 
-  return (
-    <main className="tela inicio">
-      <h1>Forca Gartic</h1>
-      <p className="sub">Adivinhe a palavra — a imagem vai ficando nítida a cada acerto.</p>
+//   return (
+//     <main className="tela inicio">
+//       <h1>Forca Gartic</h1>
+//       <p className="sub">Adivinhe a palavra — a imagem vai ficando nítida a cada acerto.</p>
 
-      <label className="campo">
-        Categoria
-        <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-          <option value="">Todas</option>
-          {CATEGORIAS_DISPONIVEIS.map((c) => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
-      </label>
+//       <label className="campo">
+//         Categoria
+//         <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+//           <option value="">Todas</option>
+//           {CATEGORIAS_DISPONIVEIS.map((c) => (
+//             <option key={c} value={c}>{c}</option>
+//           ))}
+//         </select>
+//       </label>
 
-      <div className="modos">
-        {LISTA_MODOS.map((m) => (
-          <button
-            key={m.id}
-            className="modo-botao"
-            style={{ borderColor: m.cor }}
-            onClick={() => aoComecar({ modo: m.id, categoria: categoria || null })}
-          >
-            <strong style={{ color: m.cor }}>{m.nome}</strong>
-            <small>
-              {m.erros} erros · {m.tempo ? `${m.tempo}s` : 'sem tempo'} · x{m.multiplicador}
-            </small>
-          </button>
-        ))}
-      </div>
+//       <div className="modos">
+//         {LISTA_MODOS.map((m) => (
+//           <button
+//             key={m.id}
+//             className="modo-botao"
+//             style={{ borderColor: m.cor }}
+//             onClick={() => aoComecar({ modo: m.id, categoria: categoria || null })}
+//           >
+//             <strong style={{ color: m.cor }}>{m.nome}</strong>
+//             <small>
+//               {m.erros} erros · {m.tempo ? `${m.tempo}s` : 'sem tempo'} · x{m.multiplicador}
+//             </small>
+//           </button>
+//         ))}
+//       </div>
 
-      <Ranking quantidade={5} />
-    </main>
-  )
-}
+//       <Ranking quantidade={5} />
+//     </main>
+//   )
+// } 
+// nao precisa usar mais isso 
 
 function Jogo({ config, aoSair }) {
   const jogo = usarJogo(config)

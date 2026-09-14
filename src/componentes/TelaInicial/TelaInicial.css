@@ -1,0 +1,199 @@
+
+
+.tela-inicial {
+   width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    #101d38 0%,
+    #182d52 50%,
+    #0c172c 100%
+  );
+
+  color: white;
+
+  font-family: comic relief, cursive;
+}
+
+
+
+.conteudo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+
+.subtitulo {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+
+
+.conteudo h1 {
+  margin: 0;
+
+  font-family: "Comic Relief", cursive;
+
+  font-size: 82px;
+
+  font-weight: 900;
+
+  letter-spacing: 10px;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+
+/* Linha abaixo do título */
+
+.linha-titulo {
+  width: 100px;
+  height: 3px;
+
+  margin-top: 12px;
+  margin-bottom: 20px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  opacity: 0.7;
+}
+
+
+
+.botao-comecar {
+ 
+  padding: 16px 65px;
+
+  border: 4px solid #171717;
+
+  border-radius: 6px;
+
+  background: #4b82d1;
+
+  color: #ffd45c;
+
+  font-family: "Comic Relief", cursive;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 0 #8a5a20,
+    inset 0 4px 0 #76a4e5,
+    inset 0 -5px 0 #315fa5;
+
+  transition: 0.15s;
+}
+
+
+/* Mouse em cima */
+
+.botao-comecar:hover {
+ transform: translateY(-3px);
+
+  background: #5b91df;
+
+  box-shadow:
+    0 9px 0 #8a5a20,
+    inset 0 4px 0 #82ade9,
+    inset 0 -5px 0 #396bb3;
+}
+
+
+/* Clique */
+
+.botao-comecar:active {
+   transform: translateY(3px);
+
+  box-shadow:
+    0 3px 0 #8a5a20,
+    inset 0 3px 0 #315fa5;
+}
+
+
+.instrucao {
+  margin-top: 14px;
+
+  font-size: 12px;
+
+  opacity: 0.4;
+
+  letter-spacing: 1px;
+}
+
+.transicao .conteudo {
+  animation: entrarNoJogo 1.5s ease-in forwards;
+}
+
+@keyframes entrarNoJogo {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  35% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.transicao {
+  animation: escurecerTela 1.5s ease-in forwards;
+}
+
+@keyframes escurecerTela {
+  0% {
+    background: linear-gradient(
+      180deg,
+      #101b35 0%,
+      #182b4d 50%,
+      #0b1529 100%
+    );
+  }
+
+  100% {
+    background: #050914;
+  }
+}
+
+
