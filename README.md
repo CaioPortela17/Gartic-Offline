@@ -55,9 +55,17 @@ npm run build    # gera a versão de produção em dist/
 npm run preview  # serve o build de produção localmente
 ```
 
-### Tecnologias
+### Ferramentas e tecnologias
 
-React 18 · Vite · [PrimeReact](https://primereact.org/) (Card, Button, DataTable, Dialog, Dropdown, ProgressBar, SelectButton) · localStorage
+- **[React 18](https://react.dev/)** — biblioteca de UI
+- **[Vite](https://vitejs.dev/)** + `@vitejs/plugin-react` — build e dev server
+- **[PrimeReact](https://primereact.org/)** — biblioteca de componentes (Card, Button, DataTable, Dialog, Dropdown, ProgressBar, SelectButton, Tag, Message, ConfirmDialog)
+- **[PrimeIcons](https://primereact.org/icons/)** — ícones
+- **[Google Fonts](https://fonts.google.com/)** — Fredoka (títulos) e Nunito (texto)
+- **SVG + CSS (`stroke-dashoffset`)** — animação do boneco da forca sendo desenhado
+- **`localStorage`** — persistência do ranking, sem backend/banco de dados
+- **[npm](https://www.npmjs.com/)** — gerenciador de pacotes
+- **[Render](https://render.com/)** — hospedagem do site (deploy automático a partir da `main`)
 
 ### Estrutura do projeto
 
@@ -113,9 +121,17 @@ npm run build    # production build into dist/
 npm run preview  # serve the production build locally
 ```
 
-### Tech stack
+### Tools and tech stack
 
-React 18 · Vite · [PrimeReact](https://primereact.org/) (Card, Button, DataTable, Dialog, Dropdown, ProgressBar, SelectButton) · localStorage
+- **[React 18](https://react.dev/)** — UI library
+- **[Vite](https://vitejs.dev/)** + `@vitejs/plugin-react` — build tool and dev server
+- **[PrimeReact](https://primereact.org/)** — component library (Card, Button, DataTable, Dialog, Dropdown, ProgressBar, SelectButton, Tag, Message, ConfirmDialog)
+- **[PrimeIcons](https://primereact.org/icons/)** — icon set
+- **[Google Fonts](https://fonts.google.com/)** — Fredoka (headings) and Nunito (body text)
+- **SVG + CSS (`stroke-dashoffset`)** — the "hangman being drawn" animation
+- **`localStorage`** — leaderboard persistence, no backend/database
+- **[npm](https://www.npmjs.com/)** — package manager
+- **[Render](https://render.com/)** — hosting (auto-deploys from `main`)
 
 ### Project structure
 
