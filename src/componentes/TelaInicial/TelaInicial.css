@@ -20,7 +20,7 @@
 
   color: white;
 
-  font-family: comic relief, cursive;
+  font-family: 'Nunito', system-ui, sans-serif;
 }
 
 
@@ -57,13 +57,13 @@
 .conteudo h1 {
   margin: 0;
 
-  font-family: "Comic Relief", cursive;
+  font-family: "Fredoka", sans-serif;
 
   font-size: 82px;
 
-  font-weight: 900;
+  font-weight: 700;
 
-  letter-spacing: 10px;
+  letter-spacing: 4px;
 
   text-transform: uppercase;
 
@@ -103,10 +103,10 @@
 
   color: #ffd45c;
 
-  font-family: "Comic Relief", cursive;
+  font-family: "Fredoka", sans-serif;
 
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
 
   letter-spacing: 2px;
 

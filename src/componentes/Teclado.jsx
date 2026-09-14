@@ -4,6 +4,7 @@
  */
 
 import { useEffect } from 'react'
+import { Button } from 'primereact/button'
 import { ALFABETO, normalizar } from '../sistemas/palavras.js'
 
 export default function Teclado({ rodada, aoChutar, desativado = false }) {
@@ -23,14 +24,15 @@ export default function Teclado({ rodada, aoChutar, desativado = false }) {
         const acertou = rodada.acertos.includes(letra)
         const errou = rodada.erros.includes(letra)
         return (
-          <button
+          <Button
             key={letra}
-            className={'tecla' + (acertou ? ' acerto' : '') + (errou ? ' erro' : '')}
+            label={letra}
+            className="tecla"
+            severity={acertou ? 'success' : errou ? 'danger' : 'secondary'}
+            outlined={!acertou && !errou}
             onClick={() => aoChutar(letra)}
             disabled={desativado || acertou || errou}
-          >
-            {letra}
-          </button>
+          />
         )
       })}
     </div>

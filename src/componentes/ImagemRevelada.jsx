@@ -10,7 +10,7 @@
  * por PNG/SVG depois só preenchendo o campo `imagem` no banco de palavras.
  */
 
-export default function ImagemRevelada({ emoji, imagem, nitidez = 0, alt = 'desenho da palavra' }) {
+export default function ImagemRevelada({ emoji, imagem, nitidez = 0, alt = 'desenho da palavra', compacta = false }) {
   const n = Math.min(1, Math.max(0, nitidez))
 
   const estilo = {
@@ -18,6 +18,21 @@ export default function ImagemRevelada({ emoji, imagem, nitidez = 0, alt = 'dese
     opacity: 0.25 + n * 0.75,
     transform: `scale(${0.9 + n * 0.1})`,
     transition: 'filter .5s ease, opacity .5s ease, transform .5s ease',
+  }
+
+  if (compacta) {
+    return (
+      <div className="imagem-mini">
+        <div className="quadro">
+          {imagem ? (
+            <img src={imagem} alt={alt} style={estilo} />
+          ) : (
+            <span style={estilo} role="img" aria-label={alt}>{emoji}</span>
+          )}
+        </div>
+        <small>a palavra</small>
+      </div>
+    )
   }
 
   return (
